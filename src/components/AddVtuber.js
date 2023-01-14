@@ -11,10 +11,7 @@ const AddVtuber = (props) => {
         event.preventDefault();
         const enteredName = nameInputRef.current.value;
         const enteredUserAge = ageInputRef.current.value;
-        const vtuberData = {
-            name: enteredName,
-            age: enteredUserAge
-        };
+        props.AddList(enteredName, enteredUserAge);
         nameInputRef.current.value = "";
         ageInputRef.current.value = "";
     };
@@ -26,7 +23,7 @@ const AddVtuber = (props) => {
                 <input type="text" id="name" ref={nameInputRef}/>
                 <label htmlFor="age">Age</label>
                 <input type="number" id="age" ref={ageInputRef}/>
-                <button onClick={submitHandler} className={classes.AddButton}>submit</button>
+                <button type="submit" className={classes.AddButton}>submit</button>
             </form>
         </Card>
     );
