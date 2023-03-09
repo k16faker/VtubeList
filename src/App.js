@@ -1,25 +1,19 @@
-import React, {useState} from "react";
-import Card from "./UI/Card";
-import Header from "./components/Header";
-import AddVtuber from "./components/AddVtuber";
-import List from "./components/List";
+import React, {useEffect, useState, Fragment} from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import LoginForm from "./page/LoginForm";
+import MainPage from "./page/MainPage";
 
 function App() {
-  const [VtubeList, VtubeListSet] = useState([]);
 
-  const AddVtubeHandler = (vName, vAge) => {
-    VtubeListSet((prevVtubeList) => {
-      return [...prevVtubeList, { name: vName, age: vAge, id: Math.random().toString() }]
-    });
-    console.log(VtubeList)
-  };
+
 
   return (
-    <React.Fragment>
-      <Header />
-      <AddVtuber AddList={AddVtubeHandler}/>
-      <List vtubes = {VtubeList}/>
-    </React.Fragment>
+    <Fragment>
+      <Routes>
+        <Route path="/" exact={true} element={<MainPage/>}></Route>
+        <Route path="/login" exact={true} element={<LoginForm/>}></Route>
+      </Routes>
+    </Fragment>
   );
 }
 
