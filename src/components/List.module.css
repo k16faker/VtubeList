@@ -1,16 +1,21 @@
 .vtubes {
-    margin: 2rem auto;
-    width: 90%;
-    max-width: 40rem;
-  }
-  
+  margin: 2rem auto;
+  width: 90%;
+  max-width: 40rem;
+}
+
 .vtubes ul {
-    list-style: none;
-    padding: 1rem;
-  }
-  
+  list-style: none;
+  padding: 1rem;
+}
+
 .vtubes li {
-    border: 1px solid #ccc;
-    margin: 0.5rem 0;
-    padding: 0.5rem;
-  }
+  border: 1px solid #ccc;
+  margin: 0.5rem 0;
+  padding: 0.5rem;
+}
+
+.vtubes button {
+  border-radius: 10px;
+  font-family: "dongle", "Times New Roman", Times, serif;
+}
